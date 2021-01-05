@@ -96,6 +96,8 @@ SAVEHIST=100000
 
 bindkey -v
 
+autoload -U add-zsh-hook
+add-zsh-hook -Uz chpwd (){ exa -lbF --git; }
 
 # User configuration
 
