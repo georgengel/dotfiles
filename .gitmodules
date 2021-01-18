@@ -1,0 +1,6 @@
+[submodule ".vim/pack/plugins/start/vifm.vim"]
+	path = .vim/pack/plugins/start/vifm.vim
+	url = git@github.com:vifm/vifm.vim.git
+[submodule ".vim/pack/plugins/start/lightline.vim"]
+	path = .vim/pack/plugins/start/lightline.vim
+	url = git@github.com:itchyny/lightline.vim.git
