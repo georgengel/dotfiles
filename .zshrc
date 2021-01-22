@@ -1,3 +1,14 @@
+# Automatically list directory contents on `cd`.
+auto-ls () {
+        emulate -L zsh;
+        # explicit sexy ls'ing as aliases arent honored in here.
+        hash exa >/dev/null 2>&1 && exa -lbF --git || ls
+}
+chpwd_functions=( auto-ls $chpwd_functions )
+
+#fortune-cm.fortune -o | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
+neofetch --kitty --size 22%
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -23,8 +34,6 @@ POWERLEVEL9K_VI_COMMAND_MODE_STRING="N"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vi_mode dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-
-
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -84,7 +93,14 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode history-substring-search zsh-syntax-highlighting)
+plugins=(
+git
+vi-mode
+zsh-autosuggestions
+history-substring-search
+zsh-syntax-highlighting
+#zsh-autocomplete
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,11 +109,9 @@ source /usr/share/doc/fzf/examples/completion.zsh
 
 
 SAVEHIST=100000
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 bindkey -v
-
-autoload -U add-zsh-hook
-add-zsh-hook -Uz chpwd (){ exa -lbF --git; }
 
 # User configuration
 

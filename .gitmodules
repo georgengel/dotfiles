@@ -4,3 +4,9 @@
 [submodule ".vim/pack/plugins/start/lightline.vim"]
 	path = .vim/pack/plugins/start/lightline.vim
 	url = git@github.com:itchyny/lightline.vim.git
+[submodule "/home/genw/.oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+	path = /home/genw/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "/home/genw/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+	path = /home/genw/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
