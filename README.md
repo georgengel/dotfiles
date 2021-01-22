@@ -1,7 +1,9 @@
 dotfiles
 ========
 
-My dotfiles. 
+My dotfiles. Setup like shown by DT here: https://www.youtube.com/watch?v=tBoLDpTWVOM
+
+Submodules / vim/zsh-plugins: https://gist.github.com/manasthakur/d4dc9a610884c60d944a4dd97f0b3560#installing-plugins
 
 Based on zsh
 
