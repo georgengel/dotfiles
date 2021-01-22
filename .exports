@@ -20,3 +20,5 @@ export PROMPT_COMMAND='history -a'
 
 export MAVEN_OPTS="-Xms128m -Xmx1024m -XX:MaxPermSize=512m"
 export LESS='-i-P%f (%i/%m) Line %lt/%L'
+
+export PATH="$PATH:$(yarn global bin)"
