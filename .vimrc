@@ -28,6 +28,12 @@ set undofile
 set incsearch
 set number relativenumber
 
+" vimwiki with markdown support
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+" helppage -> :h vimwiki-syntax
+
 inoremap <F9> <C-O>za
 nnoremap <F9> za
 onoremap <F9> <C-C>za
@@ -113,18 +119,18 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set splitbelow splitright
 
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
+"noremap <Up> <nop>
+"noremap <Down> <nop>
+"noremap <Left> <nop>
+"noremap <Right> <nop>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => commitment!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-inoremap <Up> <nop>
-inoremap <Down> <nop>
-inoremap <Left> <nop>
-inoremap <Right> <nop>
+"inoremap <Up> <nop>
+"inoremap <Down> <nop>
+"inoremap <Left> <nop>
+"inoremap <Right> <nop>
 
 " [200~https://stackoverflow.com/questions/1737163
 " provide hjkl movements in Insert mode via the <Alt> modifier key
@@ -132,3 +138,15 @@ inoremap <A-h> <C-o>h
 inoremap <A-j> <C-o>j
 inoremap <A-k> <C-o>k
 inoremap <A-l> <C-o>l
+
+" Source a local vimrc {{{
+    if has('win32')
+        let $MYLOCALVIMRC = $HOME . "/_local.vim"
+    else
+        let $MYLOCALVIMRC = $HOME . "/.local.vim"
+    endif
+
+    if filereadable($MYLOCALVIMRC)
+        source $MYLOCALVIMRC
+    endif
+" }}}
